@@ -11,6 +11,13 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+body h1{
+    font-size: 50px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
 }
 .horloge{
     width: 40%;

@@ -1,20 +1,5 @@
-/*let nomArray = ["majoie", "chrinovic", "alphonsine", "zaina", "david", "ludovic"]
-
-nomArray.forEach(function(nom){
-    console.log(nom);
-})*/
-
 let maintenant = new Date();
 
-/*
-let jour = maintenant.getDate();
-let heure = maintenant.getHours();
-let minutes = maintenant.getMinutes();
-let seconde = maintenant.getSeconds();
-console.log(jour);
-console.log(heure);
-console.log(minutes);
-console.log(seconde)*/
 
 let heure = document.querySelector('.heure');
 
@@ -22,9 +7,6 @@ let minutes = document.querySelector('.minutes');
 
 let secondes = document.querySelector('.secondes');
 
-heure.textContent = maintenant.getHours();
-minutes.textContent =" " + maintenant.getMinutes();
-secondes.textContent = maintenant.getSeconds();
 
 
 let nom__jour = document.querySelector('.nom__jour');
@@ -32,8 +14,35 @@ let jour = document.querySelector('.jour');
 let mois = document.querySelector('.mois');
 let annee = document.querySelector('.annee');
 
+function dateActuelle(){
+
+    let hours = maintenant.getHours();
+    let minute = maintenant.getMinutes();
+    let seconde = maintenant.getSeconds();
+
+    if (hours < 10) {
+        hours = "0" + hours;
+    }
+
+    if(minute < 10){
+        minute = "0" + minute;
+    }
+
+    if(seconde < 10){
+        seconde = "0" + seconde
+    }
+
+    heure.textContent = hours;
+    minutes.textContent = minute;
+    secondes.textContent = seconde;
+
+    jour.textContent = maintenant.getDate();
+    mois.textContent = maintenant.getMonth() + 1;
+    annee.textContent = maintenant.getFullYear();
+
+}
 
 
-jour.textContent = maintenant.getDate();
-mois.textContent = maintenant.getMonth() + 1;
-annee.textContent = maintenant.getFullYear();
+setInterval(
+    dateActuelle()
+    , 1000);
