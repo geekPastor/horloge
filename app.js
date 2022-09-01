@@ -1,4 +1,3 @@
-let maintenant = new Date();
 
 let email = "15mm306@esisalama.org"
 let heure = document.querySelector('.heure');
@@ -7,7 +6,7 @@ let minutes = document.querySelector('.minutes');
 
 let secondes = document.querySelector('.secondes');
 
-let t = 1000;
+let t = 10;
 
 
 let nom__jour = document.querySelector('.nom__jour');
@@ -16,6 +15,7 @@ let mois = document.querySelector('.mois');
 let annee = document.querySelector('.annee');
 
 function dateActuelle(){
+    let maintenant = new Date();
 
     let hours = maintenant.getHours();
     let minute = maintenant.getMinutes();
@@ -36,6 +36,7 @@ function dateActuelle(){
     heure.textContent = hours;
     minutes.textContent = minute;
     secondes.textContent = seconde;
+    console.log(seconde)
 
 
 
@@ -51,9 +52,9 @@ function dateActuelle(){
     jour.textContent = day;
     mois.textContent = month;
     annee.textContent = maintenant.getFullYear();
-
-
-    setInterval(
-        dateActuelle()
-        , t);
 }
+
+setInterval(
+    dateActuelle
+    , t);
+    
