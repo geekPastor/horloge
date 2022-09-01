@@ -22,11 +22,15 @@ let minutes = document.querySelector('.minutes');
 
 let secondes = document.querySelector('.secondes');
 let nom__jour = document.querySelector('.nom__jour');
-let tierses  = maintenant.getMilliseconds();
+let tierses  = 1000;
 
 let jour = document.querySelector('.jour');
 let mois = document.querySelector('.mois');
 let annee = document.querySelector('.annee');
+
+function refresh(){
+    setTimeout('dateActuelle()',t)
+}
 
 function dateActuelle(){
     heure.textContent = maintenant.getHours();
@@ -36,11 +40,9 @@ function dateActuelle(){
     jour.textContent = maintenant.getDate();
     mois.textContent = maintenant.getMonth() + 1;
     annee.textContent = maintenant.getFullYear();
+    refresh();
 }
 
 dateActuelle();
 
 
-setInterval(() => {
-    dateActuelle();
-}, 100);
