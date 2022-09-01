@@ -1,12 +1,13 @@
 let maintenant = new Date();
 
-
+let email = "15mm306@esisalama.org"
 let heure = document.querySelector('.heure');
 
 let minutes = document.querySelector('.minutes');
 
 let secondes = document.querySelector('.secondes');
 
+let t = 1000;
 
 
 let nom__jour = document.querySelector('.nom__jour');
@@ -36,13 +37,23 @@ function dateActuelle(){
     minutes.textContent = minute;
     secondes.textContent = seconde;
 
-    jour.textContent = maintenant.getDate();
-    mois.textContent = maintenant.getMonth() + 1;
+
+
+    let day = maintenant.getDate();
+    let month = maintenant.getMonth() + 1;
+    if(day < 10){
+        day = "0"+day
+    }
+
+    if(month < 10){
+        month = "0"+month
+    }
+    jour.textContent = day;
+    mois.textContent = month;
     annee.textContent = maintenant.getFullYear();
 
+
+    setInterval(
+        dateActuelle()
+        , t);
 }
-
-
-setInterval(
-    dateActuelle()
-    , 1000);
