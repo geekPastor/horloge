@@ -21,15 +21,26 @@ let heure = document.querySelector('.heure');
 let minutes = document.querySelector('.minutes');
 
 let secondes = document.querySelector('.secondes');
-
-heure.textContent = maintenant.getHours();
-minutes.textContent =" " + maintenant.getMinutes();
-secondes.textContent = maintenant.getSeconds();
+let nom__jour = document.querySelector('.nom__jour');
+let tierses  = maintenant.getMilliseconds();
 
 let jour = document.querySelector('.jour');
 let mois = document.querySelector('.mois');
 let annee = document.querySelector('.annee');
 
-jour.textContent = maintenant.getDate();
-mois.textContent = maintenant.getMonth() + 1;
-annee.textContent = maintenant.getFullYear();
+function dateActuelle(){
+    heure.textContent = maintenant.getHours();
+    minutes.textContent =" " + maintenant.getMinutes();
+    secondes.textContent = maintenant.getSeconds();
+
+    jour.textContent = maintenant.getDate();
+    mois.textContent = maintenant.getMonth() + 1;
+    annee.textContent = maintenant.getFullYear();
+}
+
+dateActuelle();
+
+
+setInterval(() => {
+    dateActuelle();
+}, 100);
